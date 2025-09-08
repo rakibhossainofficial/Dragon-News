@@ -25,7 +25,7 @@ const CategorieNews = () => {
   return (
     <div>
       {categorieNews.map((news) => (
-        <NewsCard news={news}></NewsCard>
+        <NewsCard key={news.id} news={news}></NewsCard>
       ))}
     </div>
   );

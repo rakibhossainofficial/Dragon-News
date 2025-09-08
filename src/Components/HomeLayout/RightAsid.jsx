@@ -5,7 +5,7 @@ import QZone from '../QZone/QZone'
 
 const RightAsid = () => {
   return (
-    <div>
+    <div className=''>
       <SocialLogin></SocialLogin>
       <FindUs></FindUs>
       <QZone></QZone>

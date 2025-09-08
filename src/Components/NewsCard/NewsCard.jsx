@@ -1,7 +1,9 @@
 import { FaEye, FaStar } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   const {
+    id,
     title,
     rating,
     total_view,
@@ -41,7 +43,7 @@ const NewsCard = ({ news }) => {
       </figure>
 
       {/* Details */}
-      <div className="px-4 pb-4 text-gray-700">
+      <Link to={`/newsdetails/${id}`}  className="px-4 pb-4 text-gray-700">
         {details.length > 150 ? (
           <p>
             {details.slice(0, 150)}...
@@ -50,7 +52,7 @@ const NewsCard = ({ news }) => {
         ) : (
           <p>{details}</p>
         )}
-      </div>
+      </Link>
 
       {/* Footer: Rating + Views */}
       <div className="flex items-center justify-between px-4 py-3 border-t border-gray-300 text-sm">

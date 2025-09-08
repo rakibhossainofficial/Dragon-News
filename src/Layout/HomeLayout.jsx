@@ -8,13 +8,14 @@ import RightAsid from "../Components/HomeLayout/RightAsid";
 const HomeLayout = () => {
   return (
     <div>
-      <header className="flex flex-col gap-8">
+      <header className=" flex flex-col gap-8">
         <Header />
 
         <section className="w-11/12 mx-auto">
           <LatestNews />
         </section>
-        <nav className="w-11/12 mx-auto">
+        {/* Navbar Sticky */}
+        <nav className="w-11/12 mx-auto sticky top-0 z-50">
           <Navbar />
         </nav>
       </header>
@@ -22,21 +23,20 @@ const HomeLayout = () => {
       <main className="max-w-7xl mx-auto grid grid-cols-12 gap-4">
         {/* left nav  */}
         <section className=" col-span-3">
-          <aside>
+          <aside className="sticky top-4 max-h-screen overflow-y-auto">
             <LeftAsid />
           </aside>
         </section>
         {/* Main */}
 
         <section className="main col-span-6 ">
-         <Outlet></Outlet>
+          <Outlet></Outlet>
         </section>
-
 
         {/* right nav  */}
 
         <section className="col-span-3">
-          <aside>
+          <aside className="sticky top-4 max-h-screen overflow-y-auto ">
             <RightAsid></RightAsid>
           </aside>
         </section>
@@ -46,5 +46,3 @@ const HomeLayout = () => {
 };
 
 export default HomeLayout;
-
-
