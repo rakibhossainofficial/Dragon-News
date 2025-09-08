@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../provider/AuthProvider/AuthProvider";
+import profileImg from "../../public/images/user.png"
 
 const Navbar = () => {
   const { user, userSignout } = useContext(AuthContext);
@@ -14,6 +15,7 @@ const Navbar = () => {
         console.log("Sign Out error");
       });
   };
+
   return (
     <div className="flex items-center justify-between">
       {/* blank div  */}
@@ -27,12 +29,13 @@ const Navbar = () => {
       {/* login btn  */}
 
       <div className="flex items-center gap-4">
-        <img src="/images/user.png" alt="user-photo" />
+        <span className="font-bold">{ user ?  user.displayName : " "}</span>
+        <img className="w-12 h-12 rounded-full outline-2 outline-white" src={user ? user.photoURL : profileImg} alt="user-photo" />
 
         <div>
           {user ? (
             <>
-            <span>{user.email}</span>
+            
             <button onClick={handleSignout} className="btn">
               Logout
             </button>

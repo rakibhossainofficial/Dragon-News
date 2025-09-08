@@ -6,9 +6,13 @@ const NewsDetailsCard = ({ news }) => {
   const Nevigate = useNavigate();
   const { image_url, title, details } = news;
 
+  const handleNevigate=()=>{
+    Nevigate("/")
+  }
+
   return (
     <div className="flex flex-col items-start gap-5 p-6 rounded-sm border border-gray-200">
-      <button onClick={() => Nevigate(-1)} className="btn">
+      <button onClick={handleNevigate} className="btn">
         <span>
           <FaAngleLeft />
         </span>{" "}
